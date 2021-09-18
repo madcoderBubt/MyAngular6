@@ -1,0 +1,36 @@
+<header>
+  <h1>{{title}}</h1>
+  <hr>
+</header>
+
+<form class="form-inline mb-3" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <!-- <input name="blood" class="form-control" ngModel required #first="ngModel"> -->
+  <select name="blood" class="form-control" [(ngModel)]="blood" required>
+    <option value="" selected>All</option>
+    <option *ngFor="let item of bloodList" value="{{item}}">{{item}}</option>
+  </select>
+  <input type="submit" class="btn btn-primary" value="Filter">
+</form>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Contact No</th>
+      <th>Blood Group</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of donars">
+      <td>{{user.fullName}}</td>
+      <td>{{user.contactNo}}</td>
+      <td>{{user.bloodGroup}}</td>
+      <td>
+        <a routerLink="putDonar/{{user.id}}">Edit</a> | 
+        <a routerLink="donar/{{user.id}}">View</a> | 
+        <a href="#" (click)="onDelClick(user.id)">Del</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

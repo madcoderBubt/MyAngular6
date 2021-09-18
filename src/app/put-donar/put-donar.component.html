@@ -1,0 +1,48 @@
+<header>
+  <h1>{{title}}</h1>
+  <hr>
+</header>
+<form class="mb-3" #f="ngForm" (ngSubmit)="onSubmit(f)" >
+  <!-- <input type="hidden" name="id" [(ngModel)]="bindData.id"> -->
+  <div class="form-row">
+    <div class="form-group col-12">
+      <label for="fullName">Full Name</label>
+      <input name="fullName" class="form-control" [(ngModel)]="bindData.fullName" required>      
+    </div>
+    <div class="form-group col-12">
+      <label for="email">Email</label>
+      <input name="email" class="form-control" [(ngModel)]="bindData.email">
+    </div>
+    <div class="form-group col-6">
+      <label for="contactNo">Contact No.</label>
+      <input name="contactNo" class="form-control" [(ngModel)]="bindData.contactNo" required>
+    </div>
+    <div class="form-group col-6">
+      <label for="bloodGroup">Blood Group</label>
+      <select name="bloodGroup" class="form-control" [(ngModel)]="bindData.bloodGroup" required>
+        <option *ngFor="let item of bloodList" value="{{item}}">{{item}}</option>
+      </select>
+    </div>
+    <div class="form-group col-6">
+      <label for="lastDonation">Last Donated</label>
+      <input name="lastDonation" type="datetime-local" class="form-control" [(ngModel)]="bindData.lastDonation" required>
+    </div>
+    <div class="form-group col-6">
+      <label for="birthDate">Birth Date</label>
+      <input name="birthDate" type="datetime-local" class="form-control" [(ngModel)]="bindData.birthDate">
+    </div>
+    <div class="form-group col-6">
+      <label for="gender">Select Gender</label>
+      <select name="gender" class="form-control" [(ngModel)]="bindData.gender" required>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="form-group col-6">
+      <label for="area">City</label>
+      <input name="area" class="form-control" [(ngModel)]="bindData.area" required>
+    </div>
+  </div>
+  <input type="submit" class="btn btn-primary" value="Submit">
+</form>
