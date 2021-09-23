@@ -11,6 +11,7 @@ import { DonarComponent } from './donar/donar.component';
 import { DonarDataService } from './donar-data.service';
 import { PutDonarComponent } from './put-donar/put-donar.component';
 import { NewDonarComponent } from './new-donar/new-donar.component';
+import { FilterDonarComponent } from './filter-donar/filter-donar.component';
 
 const appRoutes: Routes=[
   {
@@ -35,7 +36,8 @@ const appRoutes: Routes=[
     DonarsComponent,
     DonarComponent,
     PutDonarComponent,
-    NewDonarComponent
+    NewDonarComponent,
+    FilterDonarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,8 @@
+<form class="form-inline mb-3" #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <!-- <input name="blood" class="form-control" ngModel required #first="ngModel"> -->
+  <select name="blood" class="form-control" [(ngModel)]="blood" required>
+    <option value="" selected>All</option>
+    <option *ngFor="let item of bloodList" value="{{item}}">{{item}}</option>
+  </select>
+  <input type="submit" class="btn btn-primary" value="Filter">
+</form>

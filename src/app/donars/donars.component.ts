@@ -13,7 +13,7 @@ export class DonarsComponent implements OnInit {
   title="Donar List";
   donars:Object;
   bloodList = [];
-  blood = "";
+  selectedBlood:object = {blood:""};
   constructor(private data: DonarDataService) { this.bloodList = data.bloodList }
 
   ngOnInit() {
@@ -23,14 +23,19 @@ export class DonarsComponent implements OnInit {
   }
   
   onSubmit(model:NgForm){    
-    this.data.getAvailDonars(model.value).subscribe(
-      data => this.donars = data
-    );
+    //console.log(model.value);
+    this.RefreshList(model.value);
+    this.selectedBlood=model.value;
   }
   onDelClick(id:number){
     //console.log(this.blood);
     this.data.delDonar(id).subscribe(
-      obj => alert(obj)
+      obj => this.RefreshList(this.selectedBlood)
+    );
+  }
+  RefreshList(model){
+    this.data.getAvailDonars(model).subscribe(
+      data => this.donars = data
     );
   }
 
