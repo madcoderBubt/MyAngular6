@@ -1,7 +1,9 @@
 # Angular App 4 Blood Donar Collection
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
-> This app has been migrated to Angular version 8.2.14. Previous version is available in other branch.
+> This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9. Later was migrated to ⬇
+
+- [x] This app has been migrated to Angular version ***10.2.5***. Previous version is available in other branch.
+- [x] This app has been migrated to Angular version ***8.2.14***. Previous version is available in other branch.
 
 ## Development server
 
